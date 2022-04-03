@@ -29,21 +29,26 @@
     stored on the object.
 */
 
-class Ticket {
-(items, orderTime, customerId)
-    this.items = items,
-    this.orderTime = orderTime,
-    this.customerId = customerId
-    this.status1 = status1
 
+// missed word constructor and { } after constructor param
+
+class Ticket {
+ constructor(items, orderTime, customerId){
+    this.items = items;
+    this.orderTime = orderTime;
+    this.customerId = customerId;
+    this.status1 = `queued`;
+ }
 } 
 
-let status1 = queued
+// my thought : let status1 = queued
 
 updateStatus = (newStatus) =>{
-  if()
+  this.status1 = newStatus
+  console.log(`The order for customer ${this.customerId} is
+  now ${this.status1}.`)
 }
-
+// ^ did this wrong
 /*
     Create a new instance of your class.
     Save it to a variable called `firstTicket`.
@@ -55,15 +60,20 @@ updateStatus = (newStatus) =>{
     customer: 575
 */
 
-const firstTicket = new Ticket ("pizza, bread, soda", "7:03", 575)
+const firstTicket = new Ticket (["pizza", "bread", "soda"], "7:03 PM", 575)
 console.log(firstTicket)
 
-
+// needed to make the order/items a []
 
 /*
     Call the `updateStatus` method on
     `firstTicket` passing in the string
     'cooking'
 */
+// class review
 
+firstTicket.updateStatus(`cooking`)
+
+
+// my code (incorrect):
 updateStatus(0)

@@ -20,14 +20,19 @@
 */
 
 class Employee {
-    (name1, shifts)
-    this.name,
-    this.shifts,
+   constructor(name1, shifts){
+    this.name;
+    this.shifts;
+   }
+   getsSchedule(){
+       console.log(`${name1} works on ${shifts}`)
+   }
 }
 
-const getsSchedule = (name, shift) =>{
- return `${name1} works on ${shifts}`
-}
+// my code (should have been in the class):
+//  const getsSchedule = (name, shift) =>{
+//  return `${name1} works on ${shifts}`
+// }
 
 
 /*
@@ -40,7 +45,7 @@ const getsSchedule = (name, shift) =>{
     shifts: weekday mornings, weekday afternoons
 */
 
-const empOne = new Employee ("Jess", "weekday mornings, weekday afternoons")
+const empOne = new Employee ("Jess", ["weekday mornings, weekday afternoons"])
 console.log(empOne)
 
 /*
@@ -48,7 +53,10 @@ console.log(empOne)
     `empOne` object.
 */
 
-getsSchedule(empOne)
+// in class:
+empOne.getsSchedule()
+
+// getsSchedule(empOne)
 
 
 /*
@@ -63,7 +71,7 @@ getsSchedule(empOne)
     dot or bracket notation.
 */
 
-//CODE HERE
+const empTwo = {...empOne, name: "Jose"}
 
 
 
@@ -90,7 +98,18 @@ getsSchedule(empOne)
     the employees array. 
 */
 
-//CODE HERE
+// did not do... class review:
+class Manager extends Employee {
+    constructor(name, shifts, employees) {
+        super(name, shifts)
+        this.employees = employees
+    }
+    getEmployees()(`${this.name} manages ${this.employees}`)
+    }
+    addEmployee(amp){
+        this.employees.push(emp)
+    }
+}
 
 
 
@@ -104,8 +123,8 @@ getsSchedule(empOne)
     shifts: weekday mornings, weekday afternoons
     employees: Cece and Schmidt
 */
-
-//CODE HERE
+// did not do... class review:
+const Manager = new Manager(`Winston`, [`weekday mornings`, `weekday afternoons`]), [`Cece`, `Schmidt`]
 
 
 /*
@@ -113,7 +132,8 @@ getsSchedule(empOne)
     `manager` object.  
 */
 
-//CODE HERE
+// did not do... class review:
+Manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -121,7 +141,8 @@ getsSchedule(empOne)
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
+// did not do... class review:
+Manager.addEmployee(`Coach`)
 
 /*
     Call the `getEmployees` method on the
@@ -129,4 +150,5 @@ getsSchedule(empOne)
     that an employee was added.
 */
 
-//CODE HERE
+// did not do... class review:
+manager.getEmployees()

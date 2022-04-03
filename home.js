@@ -88,6 +88,24 @@ const canWeDeliverTwo = (zipCode) => {
 }
 console.log(canWeDeliverTwo(85205))
 
+
+// let canDeliver = false
+// deliveryAreaZipCodes.forEach(zip => {
+//     if(if zipcode){
+//         canDeliver = true
+//     })
+//     return canDeliver ? `You're in our delivery zone!` : `Sorry, we can't deliver to that address`
+
+
+//     if(canDeliver){
+//         return `You're in our delivery zone!`
+//     }else {
+//         return `Sorry, we can't deliver to that address`
+//     }
+// })
+
+
+
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -122,9 +140,14 @@ const deals = [
 */
 
 
+deals[0].title = deals[0].title.replace('15', '10')
+// or deals[0].title = deals[0].title.replace('5', '0')
 
-const newDealTen = deals.replace(`15%`, `10%`)
-console.log(newDealTen)
+console.log(deals)
+
+
+// const newDealTen = deals.replace(`15%`, `10%`)
+// console.log(newDealTen)
 
 /*
     The restaurant is going to continue its
@@ -139,6 +162,6 @@ console.log(newDealTen)
     to be displaying wrong on the live site.
 */
 
-const newDealTenApril = newDealTen.replace(`March!`, `April!`)
-
-console.log(newDealTenApril)
+// const newDealTenApril = newDealTen.replace(`March!`, `April!`)
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+console.log(deals)

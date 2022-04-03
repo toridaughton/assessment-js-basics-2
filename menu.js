@@ -33,10 +33,10 @@
 const pizza = {
     name: `Barbeque`, 
     price: 13,
-    category: "Entree",
-    popularity: 2,
-    rating: 4.5,
-    tags: "Gluten-free",
+    category: `entree`,
+    popularity: 8,
+    rating: 7.5,
+    tags: [`gluten-free`, `cauliflower`, `chicken`, `all ages`]
 }
 
 
@@ -59,7 +59,7 @@ console.log(pizza.popularity)
     get the value.
 */
 
-console.log(pizza['tags'])
+console.log(pizza.tags[1])
 
 
 /*
@@ -68,10 +68,15 @@ console.log(pizza['tags'])
     
     Print the value of your new price variable.
 */
+// class review: (I was correct with initial answer)
+const {price} = pizza 
 
-let {price: priceChange} = pizzaPrice
-priceChange = 14
-console.log(priceChange)
+console.log(price)
+
+// my answer (sent in--should have went with instinct answer)
+// let {price: priceChange} = pizzaPrice
+// priceChange = 14
+// console.log(priceChange)
 
 /*
     Fourth, and last, destructure the category
@@ -80,9 +85,11 @@ console.log(priceChange)
     Print the value of your category variable. 
 */
 
-// let {category: myCategory} = pizza
-myCategory = 
-// console.log(pizzaCategory)
+
+// same as one above
+const {category} = pizza
+
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -96,7 +103,48 @@ myCategory =
     data in some functions that you'll write.
 */
 
-//CODE HERE
+const foodArr = [{
+    name: `Bread sticks`, 
+    price: 6,
+    category: `side`,
+    popularity: 1,
+    rating: 7,
+    tags: `customer favorite`,
+},
+{
+    name: `Cinnabon`, 
+    price: 4,
+    category: `desert`,
+    popularity: 0,
+    rating: 0,
+    tags: [`new item`, `sweet treat`]
+},
+
+{
+    name: `Cherry Pepsi 2 liter`, 
+    price: 6,
+    category: `beverage`,
+    popularity: 1,
+    rating: 8,
+    tags: [`drink`, `add-on`]
+},
+{
+    name: `Cheese`, 
+    price: 6,
+    category: `entree`,
+    popularity: 1,
+    rating: 9,
+    tags: [`customer favorite`, `kid-friendly`]
+},
+{
+    name: `Pepperoni`, 
+    price: 6,
+    category: `entree`,
+    popularity: 1,
+    rating: 7.7,
+    tags: [`customer favorite`, `kid-friendly`]
+}]
+
 
 
 
@@ -112,17 +160,24 @@ myCategory =
     your food objects has.
 */
 
-//CODE HERE
+// CODE HERE
+
+// reference from past assignment used during exam
 // const identifier = (arr) => {
 //     const nerd = arr.filter(job => job.programmer)
 //     return nerd[0]
 // }
-const findFood = (arr) => {
-const filteredFood = arr.filter(pizza => pizza.category)
-    return filteredFood[0]
-}
 
-console.log(findFood(pizza))
+// const findFood = (arr) => {
+
+// class review answer
+const filteredFood = foodArr.filter(pizzaObj => {
+    return pizzaObj.tags.includes(`kid-friendly`)
+})
+// console.log(filteredFood)
+
+// console.log(findFood(pizza))
+
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -161,11 +216,23 @@ console.log(findFood(pizza))
     
     Return the filtered array from the entire function
 */
+
+// Reference during exam:
 // const myStrongest = monstersInYourPocket.filter(cpAmount => cpAmount["CP"] > 200)
 
+// this one still gets me. Practice, practice, practice (to understand).
 
-const filterByProperty = (poperty, number, type) => {
-    if(property )
+const filterByProperty = (property, number, type) => {
+    const filteredArr = foodArr.filter(pizza => {
+        if (type ===   `above`){
+            return pizza[property] > number
+        }else if (type === `below`){
+            return pizza[property] < number
+        } else {
+            return `you did not pass a valid type`
+        }
+    })
+    return filteredArr
 }
 
 /*
@@ -175,4 +242,4 @@ const filterByProperty = (poperty, number, type) => {
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+console.log(filterByProperty(`rating`, 7.5, `above`))

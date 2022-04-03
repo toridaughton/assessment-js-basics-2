@@ -57,34 +57,42 @@ console.log(summedPrice)
     decimals, for example: .06 for a 6% tax.
 */
 
-const cartWithTax = [
-    {
-        name: 'pizza', 
-        price: 9.99,
-        tax: 0.06,
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99,
-        tax: 0.06
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99,
-        tax: 0.06,
-    }
-]
 
-const FoodCoupon = 
-
-calcFinalPrice = cart.reduce((cartTotal, couponValue, tax) => {
-    return cb(cartTotal= ((summedPrice * tax.tax) - couponValue))
-})
-
-finalCost = (cartWithTax, FoodCoupon, cb){
-    
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return (cartTotal * (1 + tax)) - couponValue
 }
-console.log(finalCost)
+
+console.log(calcFinalPrice(10, 2, .06))
+// arguments are what are passed into the parameters 
+
+// const cartWithTax = [
+//     {
+//         name: 'pizza', 
+//         price: 9.99,
+//         tax: 0.06,
+//     }, 
+//     {
+//         name: 'pasta', 
+//         price: 8.99,
+//         tax: 0.06
+//     }, 
+//     {
+//         name: 'salad', 
+//         price: 7.99,
+//         tax: 0.06,
+//     }
+// ]
+
+// const FoodCoupon = 
+
+// calcFinalPrice = cart.reduce((cartTotal, couponValue, tax) => {
+//     return cb(cartTotal= ((summedPrice * tax.tax) - couponValue))
+// })
+
+// finalCost = (cartWithTax, FoodCoupon, cb){
+    
+// }
+// console.log(finalCost)
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -106,6 +114,16 @@ console.log(finalCost)
     Your object should have at least 4 properties. 
 */
 
+// name string
+// address string
+// phone number string
+// notes string
+// allergies Array
+// hasCreditCard Boolean
+// regularCustomer Boolean
+// discount array
+
+
 
     Customers = {address, payment, rating, favorite}
 
@@ -115,10 +133,22 @@ how far away the customer lives, payment option , rating of food and Service , f
     Now, create a customer object following your own
     guidelines.
 */
+// class review:
+const customer = {
+    name: `Tori Daughton`,
+    address: `somewhere`,
+    phone: `000000000`,
+    notes: `very nice`,
+    allergies: [`gluten`],
+    hasCreditCard: true,
+    regularCustomer: true,
+    discoutns[`military`, `student`]
+}
 
+// My answer
 customers = {
     address: "Grantsville",
     payment: "credit card",
     rating: 5,
-    favorite: "pasta"
+    favorite: "pasta",
 }
