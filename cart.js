@@ -65,6 +65,8 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
 console.log(calcFinalPrice(10, 2, .06))
 // arguments are what are passed into the parameters 
 
+
+// my answer during exam (was definitely making it more difficult than it needed to be)
 // const cartWithTax = [
 //     {
 //         name: 'pizza', 
@@ -124,10 +126,8 @@ console.log(calcFinalPrice(10, 2, .06))
 // discount array
 
 
-
-    Customers = {address, payment, rating, favorite}
-
-how far away the customer lives, payment option , rating of food and Service , favorite item on menu
+// my answer during exams:
+// const Customers = {address, payment, rating, favorite}
 
 /*
     Now, create a customer object following your own
@@ -142,13 +142,13 @@ const customer = {
     allergies: [`gluten`],
     hasCreditCard: true,
     regularCustomer: true,
-    discoutns[`military`, `student`]
+    discounts: [`military`, `student`]
 }
 
-// My answer
-customers = {
-    address: "Grantsville",
-    payment: "credit card",
-    rating: 5,
-    favorite: "pasta",
-}
+// // My answer
+// customers = {
+//     address: "Grantsville",
+//     payment: "credit card",
+//     rating: 5,
+//     favorite: "pasta",
+// }

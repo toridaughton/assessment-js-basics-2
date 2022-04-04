@@ -39,16 +39,16 @@ class Ticket {
     this.customerId = customerId;
     this.status1 = `queued`;
  }
+ updateStatus = (newStatus) =>{
+   this.status1 = newStatus
+   console.log(`The order for customer ${this.customerId} is
+   now ${this.status1}.`)
+ }
 } 
+// ^ did this wrong
 
 // my thought : let status1 = queued
 
-updateStatus = (newStatus) =>{
-  this.status1 = newStatus
-  console.log(`The order for customer ${this.customerId} is
-  now ${this.status1}.`)
-}
-// ^ did this wrong
 /*
     Create a new instance of your class.
     Save it to a variable called `firstTicket`.
@@ -76,4 +76,4 @@ firstTicket.updateStatus(`cooking`)
 
 
 // my code (incorrect):
-updateStatus(0)
+// updateStatus(0)

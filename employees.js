@@ -21,15 +21,15 @@
 
 class Employee {
    constructor(name1, shifts){
-    this.name;
-    this.shifts;
+    this.name1 = name1;
+    this.shifts = shifts;
    }
    getsSchedule(){
-       console.log(`${name1} works on ${shifts}`)
+       console.log(`${this.name1} works on ${this.shifts}`)
    }
 }
 
-// my code (should have been in the class):
+// my code (the *method* should have been in the class):
 //  const getsSchedule = (name, shift) =>{
 //  return `${name1} works on ${shifts}`
 // }
@@ -45,8 +45,9 @@ class Employee {
     shifts: weekday mornings, weekday afternoons
 */
 
-const empOne = new Employee ("Jess", ["weekday mornings, weekday afternoons"])
+const empOne = new Employee ("Jess", [`weekday mornings`, `weekday afternoons`])
 console.log(empOne)
+// shifts could just be a string but an array would be easier to edit in the future
 
 /*
     Call the `getSchedule` method on the
@@ -55,6 +56,7 @@ console.log(empOne)
 
 // in class:
 empOne.getsSchedule()
+
 
 // getsSchedule(empOne)
 
@@ -71,9 +73,11 @@ empOne.getsSchedule()
     dot or bracket notation.
 */
 
-const empTwo = {...empOne, name: "Jose"}
+const empTwo = {...empOne, name2: "Nick"}
 
+console.log(empTwo)
 
+// empTwo.name = "Nick"
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -100,13 +104,14 @@ const empTwo = {...empOne, name: "Jose"}
 
 // did not do... class review:
 class Manager extends Employee {
-    constructor(name, shifts, employees) {
-        super(name, shifts)
+    constructor(name1, shifts, employees) {
+        super(name1, shifts)
         this.employees = employees
     }
-    getEmployees()(`${this.name} manages ${this.employees}`)
+    getEmployees(){
+      console.log(`${this.name1} manages ${this.employees}`)
     }
-    addEmployee(amp){
+    addEmployee(emp){
         this.employees.push(emp)
     }
 }
@@ -124,7 +129,7 @@ class Manager extends Employee {
     employees: Cece and Schmidt
 */
 // did not do... class review:
-const Manager = new Manager(`Winston`, [`weekday mornings`, `weekday afternoons`]), [`Cece`, `Schmidt`]
+const manager = new Manager(`Winston`, [`weekday mornings`, `weekday afternoons`], [`Cece`, `Schmidt`])
 
 
 /*
@@ -133,7 +138,7 @@ const Manager = new Manager(`Winston`, [`weekday mornings`, `weekday afternoons`
 */
 
 // did not do... class review:
-Manager.getEmployees()
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -142,7 +147,7 @@ Manager.getEmployees()
 */
 
 // did not do... class review:
-Manager.addEmployee(`Coach`)
+manager.addEmployee(`Coach`)
 
 /*
     Call the `getEmployees` method on the
